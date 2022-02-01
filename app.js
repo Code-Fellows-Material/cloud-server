@@ -1,15 +1,14 @@
-'use strict';
+"use strict";
 
-const express = require('express');
-const app = express(); 
+const PORT = process.env.PORT || 3000;
 
-app.get('/', (req, res) => {
-  res.status(200).send('They Don\'t Think It Be Like It Is, But It Do.');
-})
+const express = require("express");
+const app = express();
 
-module.exports = {
-  start: function (port){
-    app.listen(port, () => console.log('Listening on: ', port ));
-  }, 
-  app,
-};
+app.get("/", (req, res) => {
+  res.status(200).send("They Don't Think It Be Like It Is, But It Do.");
+});
+
+app.listen(PORT, () => {
+  console.log(`SERVER LISTENING ON: ${PORT}`);
+});
